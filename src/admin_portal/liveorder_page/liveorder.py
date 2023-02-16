@@ -38,6 +38,10 @@ def search_box(chromeBrowser):
     search_box_element = chromeBrowser.find_element(By. XPATH, "//span[@class='ant-input-affix-wrapper']//input[@placeholder='Search by item']")
     search_box_element.send_keys('beef')
     
+def product_name(chromeBrowser):
+    
+    product_name_element = chromeBrowser.find_element(By.ID, "product-name-109723").click()
+    
 
 
    
