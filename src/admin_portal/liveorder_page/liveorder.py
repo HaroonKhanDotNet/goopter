@@ -35,7 +35,7 @@ def add_chinesecuisine(chromeBrowser):
     
 def search_box(chromeBrowser):
     
-    search_box_element = chromeBrowser.find_element(By. XPATH, "//div[@class='quick-search-search-row']//span[@class='ant-input-affix-wrapper']")
+    search_box_element = chromeBrowser.find_element(By. XPATH, "//span[@class='ant-input-affix-wrapper']//input[@placeholder='Search by item']")
     search_box_element.send_keys('beef')
     
 
