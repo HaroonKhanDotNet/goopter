@@ -9,9 +9,15 @@ def liveorder_main(chromeBrowser):
 def add_order(chromeBrowser):
     
     
-    
-    #add_element = chromeBrowser.find_element(By.XPATH, '//path[contains(.,"M19 13h-6v6h-2v-6H5v-2H6V5h2v6h6v2z")]').click()
-    
     add_element = chromeBrowser.find_element(By.XPATH, "//div[@class='order-list-title-end-section']//*[name()='svg']").click()
  
-    #add_element.click()   
+def add_pickup(chromeBrowser):
+
+    pickup_element = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-modal-body']//div[2]").click()
+    
+    
+def add_continue(chromeBrowser):
+    
+    chromeBrowser.find_element(By.XPATH, "//button[@class='ant-btn ant-btn-primary ant-btn-lg shipping-options-modal-continue-button']").click()
+
+   
