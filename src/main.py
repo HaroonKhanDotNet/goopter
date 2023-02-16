@@ -1,9 +1,11 @@
 
 from selenium import webdriver
+from time import sleep
 
 from admin_portal import login
-from admin_portal.products_page import products
-from admin_portal.categories_page import categories
+#from admin_portal.products_page import products
+from admin_portal.GiftCard_page import GiftCard
+#from admin_portal.categories_page import categories
 
 def goopter_main():
 
@@ -11,16 +13,19 @@ def goopter_main():
     chromeBrowser.maximize_window()
 
     # login automation
+    
     login.admin_login(chromeBrowser)
-    input()
+    sleep(5)
+    #don't make it less than 5 sec
 
-    # products automation
-    products.products_main(chromeBrowser)
-    input()
+    GiftCard.GiftCard_main(chromeBrowser)
+    sleep(5)
 
-    # products searchbox type
-    products.products_searchbox_type(chromeBrowser)
-    input()
+    GiftCard.giftcard_link(chromeBrowser)
+    sleep(5)
+
+    
+
 
     chromeBrowser.quit()
 
