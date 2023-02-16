@@ -8,7 +8,7 @@ def admin_login(chromeBrowser):
     chromeBrowser.get('https://admin-dev.goopter.com/')
 
     userName_txt = chromeBrowser.find_element(By.NAME, 'username')
-    userName_txt.send_keys('alexandradev')
+    userName_txt.send_keys('alexadradev')
 
     password_txt = chromeBrowser.find_element(By.NAME, 'password')
     password_txt.send_keys('230130')
