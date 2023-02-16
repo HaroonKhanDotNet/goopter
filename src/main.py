@@ -40,7 +40,7 @@ def goopter_main():
     liveorder.add_chinesecuisine(chromeBrowser)
     sleep(5)
     
-    #liveorder.search_box(chromeBrowser)
+    liveorder.search_box(chromeBrowser)
     sleep(5)
     
 
