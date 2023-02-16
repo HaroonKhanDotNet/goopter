@@ -15,13 +15,19 @@ def goopter_main():
 
     # login automation
     login.admin_login(chromeBrowser)
-    sleep(10)
+    sleep(5)
     
     liveorder.liveorder_main(chromeBrowser)
-    sleep(10)
+    sleep(5)
     
     liveorder.add_order(chromeBrowser)
-    sleep(10)
+    sleep(5)
+    
+    liveorder.add_pickup(chromeBrowser)
+    sleep(5)
+    
+    liveorder.add_continue(chromeBrowser)
+    sleep(5)
 
     # products automation
     #products.products_main(chromeBrowser)
