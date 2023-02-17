@@ -1,5 +1,6 @@
 
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 
 def liveorder_main(chromeBrowser):
@@ -52,4 +53,10 @@ def confirm_button(chromeBrowser):
 
 def continue_button(chromeBrowser):
     
-    continue_button_element = chromeBrowser.find_element(By. XPATH, "/html/body/div[2]/div/div[2]/div/div[2]/div/div/div[8]/div[4]/button").click()  
+    continue_button_element = chromeBrowser.find_element(By. XPATH, "/html/body/div[2]/div/div[2]/div/div[2]/div/div/div[8]/div[4]/button").click()
+    
+def add_product_quantity(chromeBrowser):
+    
+    product_quantity_element = chromeBrowser.find_element(By. XPATH, "(//input[@value='1'])[1]")
+    #product_quantity_element.clear()
+    product_quantity_element.send_keys('\b4') 
