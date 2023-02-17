@@ -50,4 +50,6 @@ def confirm_button(chromeBrowser):
     
     confirm_button_element = chromeBrowser.find_element(By. XPATH, "//button[@class='ant-btn ant-btn-primary confirm-button']").click()
 
-   
+def continue_button(chromeBrowser):
+    
+    continue_button_element = chromeBrowser.find_element(By. XPATH, "/html/body/div[2]/div/div[2]/div/div[2]/div/div/div[8]/div[4]/button").click()  
