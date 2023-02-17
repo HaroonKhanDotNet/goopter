@@ -52,6 +52,9 @@ def goopter_main():
     liveorder.confirm_button(chromeBrowser)
     sleep(3)
     
+    liveorder.continue_button(chromeBrowser)
+    sleep(10)
+    
 
     # products automation
     #products.products_main(chromeBrowser)
