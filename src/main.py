@@ -15,23 +15,23 @@ def goopter_main():
     # login automation
     
     login.admin_login(chromeBrowser)
-    sleep(5)
+    sleep(10)
     #don't make it less than 5 sec
 
-    GiftCard.GiftCard_main(chromeBrowser)
-    sleep(5)
+    # GiftCard.GiftCard_main(chromeBrowser)
+    # sleep(5)
 
     GiftCard.giftcard_link(chromeBrowser)
-    sleep(5)
+    sleep(6)
      
-    GiftCard.filter_link(chromeBrowser)
-    sleep(5)
+    # GiftCard.filter_link(chromeBrowser)
+    # sleep(10)
 
     GiftCard.three_dots_link(chromeBrowser)
-    sleep(5)
+    sleep(6)
 
-    GiftCard.switch_link(chromeBrowser)
-    sleep(5)
+    # GiftCard.switch_link(chromeBrowser)
+    # sleep(10)
 
 
     chromeBrowser.quit()
