@@ -33,7 +33,27 @@ def Edit(chromeBrowser):
 def Edit_title(chromeBrowser):
 
       EditTtile = chromeBrowser.find_element(By.XPATH, "//input[@id='name_en']")
-      EditTtile.send_keys("\b new card 2023")
+      # earse only one character
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('\b')
+      EditTtile.send_keys('yes new gift card ')
+
+def catogories(chromeBrowser):
+     cat = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-select ant-select-lg ant-select-multiple']//div[@class='ant-select-selector']").click()
+     deselect =  chromeBrowser.find_element(By.XPATH,"//span[@title='Buffets!']//span[@class='ant-select-selection-item-remove']").click()
+     deselect =  chromeBrowser.find_element(By.XPATH,"//span[@title='GiftCard']//span[@class='ant-select-selection-item-remove']").click()
+     select = chromeBrowser.find_element(By.XPATH, "//div[contains(text(),'Pizzas')]").click()
+
   
     
       #ActionChains(chromeBrowser).move_to_element(Edit_dots).perform()
