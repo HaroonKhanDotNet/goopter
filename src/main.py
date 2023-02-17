@@ -2,12 +2,13 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+
 from admin_portal import login
-from admin_portal import publishmanager_page
+#from admin_portal import publishmanager_page
 # from admin_portal.products_page import products
 # from admin_portal.categories_page import categories
-from admin_portal.publishmanager_page import publishmanager
-
+#from admin_portal.publishmanager_page import publishmanager
+from admin_portal.liveorder_page import liveorder 
 
 def goopter_main():
 
@@ -21,16 +22,26 @@ def goopter_main():
     login.admin_login(chromeBrowser)
     time.sleep(3)
 
-    # publish manager automation
+    #live order automation
+    liveorder.liveorder_main(chromeBrowser)
+    time.sleep(3)
+
+    #liveorder.liveorder_export(chromeBrowser)
+    liveorder.liverorder_search(chromeBrowser)
+
+    input()
+    chromeBrowser.quit()
+
+''' # publish manager automation
     publishmanager.publishmanager_main(chromeBrowser)
     time.sleep(2)
 
-    #publishmanager.publishmanager_republish(chromeBrowser)
-    #time.sleep(2)
+    publishmanager.publishmanager_republish(chromeBrowser)
+    time.sleep(2)
     
     publishmanager.publishmanager_unpublish(chromeBrowser)
     time.sleep(2)
-    
+
     publishmanager.publishmanager_sync(chromeBrowser)
     time.sleep(5)
 
@@ -41,10 +52,8 @@ def goopter_main():
     # products searchbox type
     # products.products_searchbox_type(chromeBrowser)
     # input()
-
-    input()
-    chromeBrowser.quit()
-
+'''
+  
 
 if __name__ == '__main__':
     goopter_main()

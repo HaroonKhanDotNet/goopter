@@ -1,4 +1,3 @@
-
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -8,7 +7,6 @@ def publishmanager_main(chromeBrowser):
     click_publishmanager = chromeBrowser.find_element(By.XPATH, "/html/body/div/div/section/section/aside[2]/div/div/div[2]/ul/li[8]/span[2]")
     click_publishmanager.click()
     time.sleep(3)
-
 
 def publishmanager_unpublish(chromeBrowser):
     unpublish_btn = chromeBrowser.find_element(By.XPATH, "/html/body/div/div/section/section/main/div[2]/div[2]/button[1]")
