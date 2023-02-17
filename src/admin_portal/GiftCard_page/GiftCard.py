@@ -31,7 +31,6 @@ def Edit(chromeBrowser):
       Edit_dots= chromeBrowser.find_element(By.XPATH,"//span[normalize-space()='Edit']").click()
 
 def Edit_title(chromeBrowser):
-
       EditTtile = chromeBrowser.find_element(By.XPATH, "//input[@id='name_en']")
       # earse only one character
       EditTtile.send_keys('\b')
@@ -53,6 +52,26 @@ def catogories(chromeBrowser):
      deselect =  chromeBrowser.find_element(By.XPATH,"//span[@title='Buffets!']//span[@class='ant-select-selection-item-remove']").click()
      deselect =  chromeBrowser.find_element(By.XPATH,"//span[@title='GiftCard']//span[@class='ant-select-selection-item-remove']").click()
      select = chromeBrowser.find_element(By.XPATH, "//div[contains(text(),'Pizzas')]").click()
+    
+def price(chromeBrowser):
+       price_txt= chromeBrowser.find_element(By.XPATH, "//input[@id='price']")
+       price_txt.send_keys('\b')
+       price_txt.send_keys('\b')
+       price_txt.send_keys('\b')
+       price_txt.send_keys('12')
+           
+def SpecialPrice(chromeBrowser):
+       Sprice_txt= chromeBrowser.find_element(By.XPATH, "//input[@id='special_price']")
+       Sprice_txt.send_keys('\b')
+       Sprice_txt.send_keys('\b')
+       Sprice_txt.send_keys('\b')
+       Sprice_txt.send_keys('120')
+
+def Date_Picker(chromeBrowser):
+      Select_Date = chromeBrowser.find_element(By.XPATH,"//input[@id='special_from_date']").click()
+      Date = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-picker-cell-inner'][normalize-space()='25']").click()
+      
+
 
   
     
@@ -64,6 +83,9 @@ def catogories(chromeBrowser):
 def switch_link(chromeBrower):
      switch_link =  chromeBrower.find_element(By.XPATH,"//div[3]//div[6]//div[1]//button[1]")
      switch_link().click
+
+
+
 
 
 

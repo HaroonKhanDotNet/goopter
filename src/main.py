@@ -36,7 +36,19 @@ def goopter_main():
     # GiftCard.switch_link(chromeBrowser)
     # sleep(10)
     GiftCard.catogories(chromeBrowser)
-    sleep(7)
+    sleep(6)
+
+    GiftCard.price(chromeBrowser)
+    sleep(6)
+
+
+    GiftCard.SpecialPrice(chromeBrowser)
+    sleep(6)
+ 
+    GiftCard.Date_Picker(chromeBrowser)
+    sleep(6)
+
+
 
     chromeBrowser.quit()
 
