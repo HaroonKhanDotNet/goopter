@@ -15,33 +15,42 @@ def goopter_main():
 
     # login automation
     login.admin_login(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.liveorder_main(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.add_order(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.add_pickup(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.add_quickpay(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     
     liveorder.add_delivery(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     
     liveorder.add_continue(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.add_chinesecuisine(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.search_box(chromeBrowser)
-    sleep(5)
+    sleep(3)
+    
+    liveorder.product_name(chromeBrowser)
+    sleep(3)
+    
+    liveorder.product_option_large(chromeBrowser)
+    sleep(3)
+    
+    liveorder.confirm_button(chromeBrowser)
+    sleep(3)
     
 
     # products automation
