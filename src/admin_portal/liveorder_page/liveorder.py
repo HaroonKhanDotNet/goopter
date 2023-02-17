@@ -42,6 +42,12 @@ def product_name(chromeBrowser):
     
     product_name_element = chromeBrowser.find_element(By.ID, "product-name-109723").click()
     
-
+def product_option_large(chromeBrowser):
+    
+    product_option_large_element = chromeBrowser.find_element(By. XPATH, "//span[@class='MuiButton-label'][normalize-space()='Large(+$7.00)']").click()
+    
+def confirm_button(chromeBrowser):
+    
+    confirm_button_element = chromeBrowser.find_element(By. XPATH, "//button[@class='ant-btn ant-btn-primary confirm-button']").click()
 
    
