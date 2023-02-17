@@ -5,6 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 
+
 # def GiftCard_main(chromeBrowser):
 #      chromeBrowser.get('https://admin-dev.goopter.com/giftCards')
 
@@ -24,8 +25,16 @@ def filter_link(chromerBrowser):
 def three_dots_link(chromerBrowser):   
        three_dots = chromerBrowser.find_element(By.XPATH,"//div[3]//div[7]//div[1]//label[1]")
        ActionChains(chromerBrowser).move_to_element(three_dots).perform()
+
+
 def Edit(chromeBrowser):
       Edit_dots= chromeBrowser.find_element(By.XPATH,"//span[normalize-space()='Edit']").click()
+
+def Edit_title(chromeBrowser):
+
+      EditTtile = chromeBrowser.find_element(By.XPATH, "//input[@id='name_en']")
+      EditTtile.send_keys("\b new card 2023")
+  
     
       #ActionChains(chromeBrowser).move_to_element(Edit_dots).perform()
 
