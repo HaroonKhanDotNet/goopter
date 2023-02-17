@@ -29,6 +29,8 @@ def goopter_main():
 
     GiftCard.three_dots_link(chromeBrowser)
     sleep(6)
+    GiftCard.Edit(chromeBrowser)
+    sleep(6)
 
     # GiftCard.switch_link(chromeBrowser)
     # sleep(10)
