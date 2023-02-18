@@ -68,11 +68,15 @@ def SpecialPrice(chromeBrowser):
        Sprice_txt.send_keys('120')
 
 def Date_Picker(chromeBrowser):
-      Select_Date = chromeBrowser.find_element(By.XPATH,"//input[@id='special_from_date']").click()
+    #  Select_Date = chromeBrowser.find_element(By.XPATH,"//input[@id='special_from_date']").click()
       Date = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-picker-cell-inner'][normalize-space()='25']").click()
       
 
+def book_Value (chromeBrowser):
+      Book= chromeBrowser.find_element(By.XPATH, "//input[@id='bookvalue']").click()
 
+def SKU (chromeBrowser):
+      SKU= chromeBrowser.find_element(By.XPATH, "//input[@id='sku']").click()
   
     
       #ActionChains(chromeBrowser).move_to_element(Edit_dots).perform()
@@ -80,10 +84,9 @@ def Date_Picker(chromeBrowser):
 
 #//div[3]//div[6]//div[1]//button[1]
 #/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/div[1]/div[3]/div[6]/div[1]/button[1]/div[1]
-def switch_link(chromeBrower):
-     switch_link =  chromeBrower.find_element(By.XPATH,"//div[3]//div[6]//div[1]//button[1]")
+def switch_link(chromeBrowser):
+     switch_link =  chromeBrowser.find_element(By.XPATH,"//div[3]//div[6]//div[1]//button[1]")
      switch_link().click
-
 
 
 

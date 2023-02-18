@@ -48,6 +48,12 @@ def goopter_main():
     GiftCard.Date_Picker(chromeBrowser)
     sleep(6)
 
+    GiftCard.book_Value(chromeBrowser)
+    sleep(6)
+     
+    GiftCard.SKU(chromeBrowser)
+    sleep(6)
+
 
 
     chromeBrowser.quit()
