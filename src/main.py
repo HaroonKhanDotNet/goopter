@@ -53,9 +53,27 @@ def goopter_main():
     sleep(3)
     
     liveorder.continue_button(chromeBrowser)
-    sleep(10)
+    sleep(5)
     
     liveorder.add_product_quantity(chromeBrowser)
+    sleep(5)
+    
+    liveorder.store_discount(chromeBrowser)
+    sleep(5)
+    
+    liveorder.discount_type_amount(chromeBrowser)
+    sleep(5)
+    
+    liveorder.discount_type_percentage(chromeBrowser)
+    sleep(3)
+    
+    liveorder.input_discount(chromeBrowser)
+    sleep(5)
+    
+    liveorder.discount_reason(chromeBrowser)
+    sleep(5)
+    
+    liveorder.done_button(chromeBrowser)
     sleep(5)
     
 
