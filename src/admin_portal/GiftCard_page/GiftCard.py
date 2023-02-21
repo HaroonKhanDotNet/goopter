@@ -12,10 +12,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 def giftcard_link(chromeBrowser):     
      giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]").click()
-   
 
-   
-     
+       
 def filter_link(chromerBrowser):   
         filter_link =  chromerBrowser.find_element(By.XPATH,"//button[@class='ant-btn ant-btn-default ant-btn-lg filter-button']//*[name()='svg']")
         filter_link().click
@@ -45,7 +43,17 @@ def Edit_title(chromeBrowser):
       EditTtile.send_keys('\b')
       EditTtile.send_keys('\b')
       EditTtile.send_keys('\b')
-      EditTtile.send_keys('yes new gift card ')
+      EditTtile.send_keys('new gift card ')
+
+def  picture(ChromeBrowser):
+      pic = ChromeBrowser.find_element(By.XPATH, "//div[@class='ant-upload-drag-container']//div//div[1]//*[name()='svg']").click()
+      pic.send_keys('C:\Users\Zaina\Downloads\giftcard.png')
+      
+
+#       def FileName = 'C:\\Users\\jdoe\\MyDocs\\Sample.pdf'
+# //Wait for the 'UploadButton' to display
+# WebUI.waitForElementVisible(findTestObject('ManObjects/UploadButton'), 30, FailureHandling.OPTIONAL))
+# WebUI.sendKeys(findTestObject('ManObjects/DocumentUpload'), File
 
 def catogories(chromeBrowser):
      cat = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-select ant-select-lg ant-select-multiple']//div[@class='ant-select-selector']").click()
@@ -69,14 +77,56 @@ def SpecialPrice(chromeBrowser):
 
 def Date_Picker(chromeBrowser):
     #  Select_Date = chromeBrowser.find_element(By.XPATH,"//input[@id='special_from_date']").click()
-      Date = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-picker-cell-inner'][normalize-space()='25']").click()
+      #Date = chromeBrowser.find_element(By.XPATH, "//input[@id='special_from_date']").click()
+      #date = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-picker ant-picker-large ant-picker-status-success ant-picker-focused']//div[@class='ant-picker-input']").click()
+     # pick_the_date = chromeBrowser.find_elment(By.XPATH, "//td[@class='ant-picker-cell ant-picker-cell-in-view ant-picker-cell-selected']//div[@class='ant-picker-cell-inner'][normalize-space()='10']").click()
+     # ok_btn = chromeBrowser.find_element (By.XPATH, "//body[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/button[1]").click()
+      date= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[1]/div/div[2]/div/div/div/div/div/input").click()
+      #selectDate = chromeBrowser.find_element(By.XPATH,"//body[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[15]/div[1]").click()
+     # DatePicked = chromeBrowser.find_element(By.XPATH, "//td[@title='2023-04-14']//div[@class='ant-picker-cell-inner'][normalize-space()='14']").click()
+      #date1= chromeBrowser.find_element(By.XPATH, "//button[@ant-click-animating-without-extra-node='false']//span[contains(text(),'Ok')]").click()
       
-
+      #ActionChains(chromeBrowser).move_to_element(Date_Picker).perform()
+     
+      
+def sale_End_Date(chromeBrowser):
+    Date = chromeBrowser.find_element (By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[2]/div/div[2]/div/div/div/div/div/input").click()
+     
 def book_Value (chromeBrowser):
-      Book= chromeBrowser.find_element(By.XPATH, "//input[@id='bookvalue']").click()
+      Book= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[7]/div[1]/div/div[2]/div/div/div/div/div/div[2]/input")
+      Book.send_keys('\b')
+      Book.send_keys('\b')
+      Book.send_keys('\b')
+      Book.send_keys('23')
 
 def SKU (chromeBrowser):
-      SKU= chromeBrowser.find_element(By.XPATH, "//input[@id='sku']").click()
+      SKUs= chromeBrowser.find_element(By.XPATH, "//input[@id='sku']")
+      SKUs.send_keys('\b')
+      SKUs.send_keys('\b')
+      SKUs.send_keys('\b')
+      SKUs.send_keys('22')
+
+
+def Short_Desc(chromeBrower):
+      Desc = chromeBrower.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[8]/div[1]/div/div[2]/div/div/div/div/span/textarea")
+      Desc.send_keys('\b')
+      Desc.send_keys('\b')
+      Desc.send_keys('\b')
+      Desc.send_keys('\b')
+      Desc.send_keys('\b')
+      Desc.send_keys('\b')
+      Desc.send_keys('new cheese pizza')
+
+def Description(chromeBrowser):
+      Desc2 = chromeBrowser.find_elemet(By.XPATH,"/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/p[1]")
+      Desc2.send_keys('\b')
+      Desc2.send_keys('\b')
+      Desc2.send_keys('\b')
+      Desc2.send_keys('\b')
+      Desc2.send_keys('\b')
+      Desc2.send_keys('\b')
+      Desc2.send_keys('new cheese pizza with mozerrila')
+
   
     
       #ActionChains(chromeBrowser).move_to_element(Edit_dots).perform()
