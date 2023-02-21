@@ -20,19 +20,42 @@ def goopter_main():
 
     # login automation
     login.admin_login(chromeBrowser)
-    time.sleep(3)
+    time.sleep(2)
 
     #live order automation
     liveorder.liveorder_main(chromeBrowser)
-    time.sleep(3)
+    time.sleep(2)
 
-    #liveorder.liveorder_export(chromeBrowser)
-    liveorder.liverorder_search(chromeBrowser)
+    liveorder.liverorder_quick_action(chromeBrowser)
+    time.sleep(2)
 
+    #liveorder.liveorder_quick_action_print(chromeBrowser)
+    
+    #liveorder.liveorder_quick_action_complete(chromeBrowser)
+   
+    #liveorder.liveorder_quick_action_cancel_order(chromeBrowser)
+  
+    #liveorder.liveorder_quick_action_update_payment_cash(chromeBrowser)
+
+    #liveorder.liveorder_quick_action_update_payment_card(chromeBrowser)
+    
+    #liveorder.liveorder_quick_action_update_payment_wechat(chromeBrowser)
+        
+    #liveorder.liveorder_quick_action_update_payment_alipay(chromeBrowser)
+    
+    #liveorder.liveorder_quick_action_update_payment_union(chromeBrowser)
+    
+    
     input()
     chromeBrowser.quit()
 
-''' # publish manager automation
+''' 
+    # live order automation
+    liveorder.liveorder_export(chromeBrowser)
+    liveorder.liverorder_search(chromeBrowser)
+
+
+    # publish manager automation
     publishmanager.publishmanager_main(chromeBrowser)
     time.sleep(2)
 
@@ -46,12 +69,14 @@ def goopter_main():
     time.sleep(5)
 
     # products automation
-    # products.products_main(chromeBrowser)
-    # input()
+    products.products_main(chromeBrowser)
+    input()
 
     # products searchbox type
-    # products.products_searchbox_type(chromeBrowser)
-    # input()
+    products.products_searchbox_type(chromeBrowser)
+    input()
+
+
 '''
   
 
