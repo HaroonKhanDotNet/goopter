@@ -76,6 +76,9 @@ def goopter_main():
     liveorder.done_button(chromeBrowser)
     sleep(5)
     
+    liveorder.delivery_time(chromeBrowser)
+    sleep(5)
+    
 
     # products automation
     #products.products_main(chromeBrowser)

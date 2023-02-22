@@ -98,3 +98,10 @@ def done_button(chromeBrowser):
     
     done_button_element = chromeBrowser.find_element(By. XPATH, "//button[normalize-space()='Done']").click()
     
+
+def delivery_time(chromeBrowser):
+    
+    delivery_time_element = chromeBrowser.find_element(
+        By. XPATH, "/html/body/div[1]/div/section/section/main/div/div/div[1]/div[2]/div[1]/div[2]/div[2]/div/div[1]").click()
+    
+    
