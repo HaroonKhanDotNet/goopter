@@ -11,7 +11,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 def giftcard_link(chromeBrowser):     
-     giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]").click()
+       giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]")
+       giftcard_link.click()
 
        
 def filter_link(chromerBrowser):   
@@ -45,9 +46,17 @@ def Edit_title(chromeBrowser):
       EditTtile.send_keys('\b')
       EditTtile.send_keys('new gift card ')
 
-def  picture(ChromeBrowser):
-      pic = ChromeBrowser.find_element(By.XPATH, "//div[@class='ant-upload-drag-container']//div//div[1]//*[name()='svg']").click()
-      pic.send_keys('C:\Users\Zaina\Downloads\giftcard.png')
+def  picture(chromeBrowser):
+      pic=chromeBrowser.find_element(By.XPATH, "//div[@class='ant-upload-drag-container']//div//div[1]//*[name()='svg']").click
+      # pic1 = chromeBrowser.find_element(By.XPATH,"C:/Users/Zaina/Downloads/giftcard.png")
+      # ActionChains(chromeBrowser).move_to_element(pic1).perform()
+      pic.send_keys('C:/Users/Zaina/Downloads/giftcard.png')
+      
+      # Runtime.getRuntime().exec(" C:\Users\Zaina\Downloads\giftcard.png")
+      # WebElement upload  = chromeBrowse.findElement(By.id("btnSave"));  
+      # upload.click()
+      #    #Upload button
+
       
 
 #       def FileName = 'C:\\Users\\jdoe\\MyDocs\\Sample.pdf'
@@ -118,7 +127,7 @@ def Short_Desc(chromeBrower):
       Desc.send_keys('new cheese pizza')
 
 def Description(chromeBrowser):
-      Desc2 = chromeBrowser.find_elemet(By.XPATH,"/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/p[1]")
+      Desc2 = chromeBrowser.find_elemet(By.XPATH,"//body/div[@id='root']/div/section[@class='ant-layout']/section[@class='ant-layout ant-layout-has-sider']/main[@class='ant-layout-content']/div[@class='wrapper-child']/form[@class='ant-form ant-form-horizontal ant-form-large items-info-form']/div[@class='ant-tabs ant-tabs-top ant-tabs-large ant-tabs-card']/div[@class='ant-tabs-content-holder']/div[@class='ant-tabs-content ant-tabs-content-top']/div[@id='rc-tabs-1-panel-item_info']/div[@class='items-tab']/div/div[@class='input-lan-select-parent']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]")
       Desc2.send_keys('\b')
       Desc2.send_keys('\b')
       Desc2.send_keys('\b')
