@@ -6,7 +6,8 @@ from admin_portal import login
 #from admin_portal.products_page import products
 from admin_portal.GiftCard_page import GiftCard
 #from admin_portal.categories_page import categories
-
+#from datetime import date 
+from admin_portal.GiftCard_page import Editpage
 def goopter_main():
 
     chromeBrowser = webdriver.Chrome()
@@ -15,14 +16,25 @@ def goopter_main():
     # login automation
     
     login.admin_login(chromeBrowser)
-    sleep(1)
+    sleep(3)
     #don't make it less than 5 sec
 
     # GiftCard.GiftCard_main(chromeBrowser)
     # sleep(5)
+    Editpage.giftcard_link(chromeBrowser)
+    sleep(4)
+
+    Editpage.three_dots_link(chromeBrowser)
+    sleep(5)
+
+    Editpage.Delete(chromeBrowser)
+    sleep(6)
+
+    # Editpage.confirmation(chromeBrowser)
+    # sleep(5)
 
     GiftCard.giftcard_link(chromeBrowser)
-    sleep(2)
+    sleep(3)
      
     # GiftCard.filter_link(chromeBrowser)
     # sleep(10)
@@ -39,8 +51,8 @@ def goopter_main():
     GiftCard.catogories(chromeBrowser)
     sleep(1)
 
-    GiftCard.picture(chromeBrowser)
-    sleep(2)
+    # GiftCard.picture(chromeBrowser)
+    # sleep(2)
 
     GiftCard.price(chromeBrowser)
     sleep(1)
@@ -64,6 +76,9 @@ def goopter_main():
     sleep(4)
 
     GiftCard.Description(chromeBrowser)
+    sleep(5)
+
+    Editpage.GiftCard_main(chromeBrowser)
     sleep(5)
 
 

@@ -5,19 +5,13 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 
-
 # def GiftCard_main(chromeBrowser):
-#      chromeBrowser.get('https://admin-dev.goopter.com/giftCards')
+#       chromeBrowser.get('https://admin-dev.goopter.com/giftCards')
 
 
 def giftcard_link(chromeBrowser):     
-       giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]")
-       giftcard_link.click()
-
-       
-def filter_link(chromerBrowser):   
-        filter_link =  chromerBrowser.find_element(By.XPATH,"//button[@class='ant-btn ant-btn-default ant-btn-lg filter-button']//*[name()='svg']")
-        filter_link().click
+        giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]")
+        giftcard_link.click()
 
 
 
@@ -47,10 +41,14 @@ def Edit_title(chromeBrowser):
       EditTtile.send_keys('new gift card ')
 
 def  picture(chromeBrowser):
-      pic=chromeBrowser.find_element(By.XPATH, "//div[@class='ant-upload-drag-container']//div//div[1]//*[name()='svg']").click
+     # pic=chromeBrowser.find_element(By.XPATH, "//div[@class='ant-upload-drag-container']//div//div[1]//*[name()='svg']")
       # pic1 = chromeBrowser.find_element(By.XPATH,"C:/Users/Zaina/Downloads/giftcard.png")
       # ActionChains(chromeBrowser).move_to_element(pic1).perform()
-      pic.send_keys('C:/Users/Zaina/Downloads/giftcard.png')
+     # pic.send_keys('C:/Users/Zaina/Downloads/giftcard.png')
+      
+          giftcard_pic = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-upload-drag-container']//div//div[1]//*[name()='svg']")
+          giftcard_pic.send_keys("./giftcard.png")
+   
       
       # Runtime.getRuntime().exec(" C:\Users\Zaina\Downloads\giftcard.png")
       # WebElement upload  = chromeBrowse.findElement(By.id("btnSave"));  
@@ -85,17 +83,9 @@ def SpecialPrice(chromeBrowser):
        Sprice_txt.send_keys('120')
 
 def Date_Picker(chromeBrowser):
-    #  Select_Date = chromeBrowser.find_element(By.XPATH,"//input[@id='special_from_date']").click()
-      #Date = chromeBrowser.find_element(By.XPATH, "//input[@id='special_from_date']").click()
-      #date = chromeBrowser.find_element(By.XPATH, "//div[@class='ant-picker ant-picker-large ant-picker-status-success ant-picker-focused']//div[@class='ant-picker-input']").click()
-     # pick_the_date = chromeBrowser.find_elment(By.XPATH, "//td[@class='ant-picker-cell ant-picker-cell-in-view ant-picker-cell-selected']//div[@class='ant-picker-cell-inner'][normalize-space()='10']").click()
-     # ok_btn = chromeBrowser.find_element (By.XPATH, "//body[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/button[1]").click()
-      date= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[1]/div/div[2]/div/div/div/div/div/input").click()
-      #selectDate = chromeBrowser.find_element(By.XPATH,"//body[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/li[15]/div[1]").click()
-     # DatePicked = chromeBrowser.find_element(By.XPATH, "//td[@title='2023-04-14']//div[@class='ant-picker-cell-inner'][normalize-space()='14']").click()
-      #date1= chromeBrowser.find_element(By.XPATH, "//button[@ant-click-animating-without-extra-node='false']//span[contains(text(),'Ok')]").click()
-      
-      #ActionChains(chromeBrowser).move_to_element(Date_Picker).perform()
+   
+     date= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[1]/div/div[2]/div/div/div/div/div/input").click()
+     
      
       
 def sale_End_Date(chromeBrowser):
@@ -134,19 +124,12 @@ def Description(chromeBrowser):
       Desc2.send_keys('\b')
       Desc2.send_keys('\b')
       Desc2.send_keys('\b')
-      Desc2.send_keys('new cheese pizza with mozerrila')
+      Desc2.send_keys('new cheese pizza with mozerrila and lots of cheeeesseeeee')
 
+def saveButton (chromeBrowser):
+      save = chromeBrowser.find_element(By.XPATH, "//button[@type='submit']").click()
   
-    
-      #ActionChains(chromeBrowser).move_to_element(Edit_dots).perform()
-
-
-#//div[3]//div[6]//div[1]//button[1]
-#/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/div[1]/div[3]/div[6]/div[1]/button[1]/div[1]
-def switch_link(chromeBrowser):
-     switch_link =  chromeBrowser.find_element(By.XPATH,"//div[3]//div[6]//div[1]//button[1]")
-     switch_link().click
-
+ 
 
 
 
