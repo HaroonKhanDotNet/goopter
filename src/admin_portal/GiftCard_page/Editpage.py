@@ -18,17 +18,22 @@ def three_dots_link(chromerBrowser):
 
 def Delete(chromeBrowser):
       Delete_dots= chromeBrowser.find_element(By.XPATH,"//span[normalize-space()='Delete']").click()
-      ok_messege = chromeBrowser.find_element(By.XPATH,"//span[normalize-space()='Cancel']")
-      ok_messege().click
-
-#def confirmation(chromeBrowser):
-     
-        
-
+      
+def confirmation(chromeBrowser):
+      ok_messege = chromeBrowser.find_element(By.XPATH,"//span[normalize-space()='OK']")
+      ActionChains(chromeBrowser).move_to_element(ok_messege).perform()
+      
        
 def filter_link(chromerBrowser):   
-      filter_link =  chromerBrowser.find_element(By.XPATH,"//button[@class='ant-btn ant-btn-default ant-btn-lg filter-button']//*[name()='svg']")
+      filter_link =  chromerBrowser.find_element(By.XPATH,"//button[@class='ant-btn ant-btn-default ant-btn-lg filter-button']")
       filter_link().click
+
+def filter_txt(chromeBrowser):
+      txt = chromeBrowser.find_element(By.XPATH, "//input[@id='product_name']").click()
+
+def SKU_filter(chromeBrowser):
+      Sku = chromeBrowser.find_element(By.XPATH, "//input[@id='product_sku']").click()
+
 
    
 def switch_link(chromeBrowser):

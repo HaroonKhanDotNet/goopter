@@ -10,8 +10,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 def giftcard_link(chromeBrowser):     
-        giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]")
-        giftcard_link.click()
+      giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]")
+      giftcard_link.click()
 
 
 
@@ -84,12 +84,12 @@ def SpecialPrice(chromeBrowser):
 
 def Date_Picker(chromeBrowser):
    
-     date= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[1]/div/div[2]/div/div/div/div/div/input").click()
+      date= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[1]/div/div[2]/div/div/div/div/div/input").click()
      
      
       
 def sale_End_Date(chromeBrowser):
-    Date = chromeBrowser.find_element (By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[2]/div/div[2]/div/div/div/div/div/input").click()
+      Date = chromeBrowser.find_element (By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[2]/div/div[2]/div/div/div/div/div/input").click()
      
 def book_Value (chromeBrowser):
       Book= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[7]/div[1]/div/div[2]/div/div/div/div/div/div[2]/input")
