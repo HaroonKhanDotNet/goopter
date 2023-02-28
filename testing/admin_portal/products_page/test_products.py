@@ -347,6 +347,7 @@ def test_products_sharing(chromeBrowser):
     chromeBrowser.switch_to.window(handles[1])
     chromeBrowser.close()
     chromeBrowser.switch_to.window(handles[0])
+    sleep(3)
     
 # via email  (manual testing for email app)
     sharing.find_element(By.XPATH,'//p[contains(.,"Share via Email")]').click()
