@@ -83,13 +83,11 @@ def SpecialPrice(chromeBrowser):
        Sprice_txt.send_keys('120')
 
 def Date_Picker(chromeBrowser):
-   
-      date= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[1]/div/div[2]/div/div/div/div/div/input").click()
-     
+     date= chromeBrowser.find_element(By.XPATH, "//div[@class='ant-picker ant-picker-large ant-picker-status-success ant-picker-focused']//div[@class='ant-picker-input']").click()
      
       
 def sale_End_Date(chromeBrowser):
-      Date = chromeBrowser.find_element (By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[6]/div[2]/div/div[2]/div/div/div/div/div/input").click()
+      Date = chromeBrowser.find_element (By.XPATH, "/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/p[2]").click()
      
 def book_Value (chromeBrowser):
       Book= chromeBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/form/div[1]/div[2]/div/div[1]/div/div[1]/div[7]/div[1]/div/div[2]/div/div/div/div/div/div[2]/input")
@@ -117,7 +115,7 @@ def Short_Desc(chromeBrower):
       Desc.send_keys('new cheese pizza')
 
 def Description(chromeBrowser):
-      Desc2 = chromeBrowser.find_elemet(By.XPATH,"//body/div[@id='root']/div/section[@class='ant-layout']/section[@class='ant-layout ant-layout-has-sider']/main[@class='ant-layout-content']/div[@class='wrapper-child']/form[@class='ant-form ant-form-horizontal ant-form-large items-info-form']/div[@class='ant-tabs ant-tabs-top ant-tabs-large ant-tabs-card']/div[@class='ant-tabs-content-holder']/div[@class='ant-tabs-content ant-tabs-content-top']/div[@id='rc-tabs-1-panel-item_info']/div[@class='items-tab']/div/div[@class='input-lan-select-parent']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]")
+      Desc2 = chromeBrowser.find_elemet(By.XPATH,"//body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[2]/span[1]")
       Desc2.send_keys('\b')
       Desc2.send_keys('\b')
       Desc2.send_keys('\b')

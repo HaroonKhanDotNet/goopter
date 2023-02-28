@@ -21,17 +21,7 @@ def goopter_main():
 
     # GiftCard.GiftCard_main(chromeBrowser)
     # sleep(5)
-    Editpage.giftcard_link(chromeBrowser)
-    sleep(4)
 
-    Editpage.three_dots_link(chromeBrowser)
-    sleep(5)
-
-    Editpage.Delete(chromeBrowser)
-    sleep(6)
-
-    # Editpage.confirmation(chromeBrowser)
-    # sleep(5)
 
     GiftCard.giftcard_link(chromeBrowser)
     sleep(3)
@@ -60,12 +50,6 @@ def goopter_main():
     GiftCard.SpecialPrice(chromeBrowser)
     sleep(1)
  
-    GiftCard.Date_Picker(chromeBrowser)
-    sleep(4)
-
-    GiftCard.sale_End_Date(chromeBrowser)
-    sleep(4)
-
     GiftCard.book_Value(chromeBrowser)
     sleep(6)
      
@@ -75,8 +59,8 @@ def goopter_main():
     GiftCard.Short_Desc(chromeBrowser)
     sleep(4)
 
-    GiftCard.Description(chromeBrowser)
-    sleep(5)
+    # GiftCard.Description(chromeBrowser)
+    # sleep(5)
 
     Editpage.GiftCard_main(chromeBrowser)
     sleep(5)

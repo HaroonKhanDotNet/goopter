@@ -23,7 +23,6 @@ def confirmation(chromeBrowser):
       ok_messege = chromeBrowser.find_element(By.XPATH,"//span[normalize-space()='OK']")
       ActionChains(chromeBrowser).move_to_element(ok_messege).perform()
       
-       
 def filter_link(chromerBrowser):   
       filter_link =  chromerBrowser.find_element(By.XPATH,"//button[@class='ant-btn ant-btn-default ant-btn-lg filter-button']")
       filter_link().click
