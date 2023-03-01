@@ -1,10 +1,14 @@
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from datetime import date
+
+
 
 
 def liveorder_main(chromeBrowser):
-
+    
+    chromeBrowser.implicitly_wait(10)
     chromeBrowser.get('https://admin-dev.goopter.com/liveOrders')
    
 def add_order(chromeBrowser):
@@ -104,4 +108,24 @@ def delivery_time(chromeBrowser):
     delivery_time_element = chromeBrowser.find_element(
         By. XPATH, "/html/body/div[1]/div/section/section/main/div/div/div[1]/div[2]/div[1]/div[2]/div[2]/div/div[1]").click()
     
+#def pick_delivery_date(chromeBrowser):
     
+    #pick_delivery_date_element = chromeBrowser.find_element(
+        #By.XPATH, "/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div/div[2]").click()
+    
+#def pick_delivery_time(chromeBrowser):
+    
+    #pick_delivery_time_element = chromeBrowser.find_element(
+        #By. XPATH, "//span[normalize-space()='12:30PM-01:00PM']").click()
+
+def add_tip(chromeBrowser):
+    
+    add_tip_element = chromeBrowser.find_element(By. XPATH, "//div[contains(text(),'15%')]").click()    
+    
+def find_customer(chromeBrowser):
+    
+    find_customer_element = chromeBrowser.find_element(By. XPATH, "//input[@id='create-order-customer-search-select']").click()
+    
+def pick_customer(chromeBrowser):
+    
+    pick_customer_element = chromeBrowser.find_element(By. XPATH, "//b[normalize-space()='Anton Chekhov']").click()

@@ -1,6 +1,7 @@
 
 from selenium import webdriver
 
+
 from admin_portal import login
 from admin_portal.liveorder_page import liveorder
 from time import sleep
@@ -10,15 +11,17 @@ from time import sleep
 
 def goopter_main():
 
+    
     chromeBrowser = webdriver.Chrome()
     chromeBrowser.maximize_window()
+    chromeBrowser.implicitly_wait(10)
 
     # login automation
     login.admin_login(chromeBrowser)
-    sleep(3)
+    sleep(2)
     
     liveorder.liveorder_main(chromeBrowser)
-    sleep(3)
+    sleep(2)
     
     liveorder.add_order(chromeBrowser)
     sleep(3)
@@ -62,23 +65,37 @@ def goopter_main():
     sleep(5)
     
     liveorder.discount_type_amount(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.discount_type_percentage(chromeBrowser)
     sleep(3)
     
     liveorder.input_discount(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.discount_reason(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
     liveorder.done_button(chromeBrowser)
-    sleep(5)
+    sleep(3)
     
-    liveorder.delivery_time(chromeBrowser)
-    sleep(5)
+    #liveorder.delivery_time(chromeBrowser)
+    #sleep(3)
     
+    #liveorder.pick_delivery_date(chromeBrowser)
+    #sleep(3)
+    
+    #liveorder.pick_delivery_time(chromeBrowser)
+    #sleep(3)
+    
+    liveorder.add_tip(chromeBrowser)
+    sleep(3)
+    
+    liveorder.find_customer(chromeBrowser)
+    sleep(3)
+    
+    liveorder.pick_customer(chromeBrowser)
+    sleep(3)
 
     # products automation
     #products.products_main(chromeBrowser)
