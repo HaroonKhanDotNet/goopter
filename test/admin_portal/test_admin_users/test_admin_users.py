@@ -1,18 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-import time
-
 chromeBrowser = None
 
-
 def setup_module():
-    print('================setup admin users===================')
     global chromeBrowser
     chromeBrowser = webdriver.Chrome()
     chromeBrowser.implicitly_wait(10)
+    admin_login()
 
-def test_admin_login():
+
+def admin_login():
 
     chromeBrowser.get('https://admin-dev.goopter.com/')
 
@@ -22,8 +20,8 @@ def test_admin_login():
     password_txt = chromeBrowser.find_element(By.NAME, 'password')
     password_txt.send_keys('20230130')
 
-    #login_btn = chromeBrowser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/form/div/div[3]/div/div/div/button')
-    #login_btn.click()
+    login_btn = chromeBrowser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/form/div/div[3]/div/div/div/button')
+    login_btn.click()
 
 
 def test_add_admin():
@@ -45,6 +43,6 @@ def test_add_admin():
     submit_button =chromeBrowser.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/div/div[2]/div/div/div[1]/button')
     submit_button.click()
 
+
 def teardown_module():
-    print('================teardown admin users======================')
     chromeBrowser.quit()
