@@ -58,12 +58,19 @@ def goopter_main():
 
     GiftCard.Short_Desc(chromeBrowser)
     sleep(4)
+    GiftCard.saveButton(chromeBrowser)
+    sleep(4)
+    
+    GiftCard.search(chromeBrowser)
+    sleep(4)
 
     # GiftCard.Description(chromeBrowser)
     # sleep(5)
 
-    Editpage.GiftCard_main(chromeBrowser)
-    sleep(5)
+    # Editpage.GiftCard_main(chromeBrowser)
+    # sleep(5)
+
+
 
 
 

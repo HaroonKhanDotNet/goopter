@@ -2,9 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-
-
-
 # def GiftCard_main(chromeBrowser):
 #       chromeBrowser.get('https://admin-dev.goopter.com/giftCards')
 
@@ -12,7 +9,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 def giftcard_link(chromeBrowser):     
       giftcard_link = chromeBrowser.find_element(By.XPATH, "//li[9]")
       giftcard_link.click()
-
 
 
 def three_dots_link(chromerBrowser):   
@@ -101,7 +97,7 @@ def SKU (chromeBrowser):
       SKUs.send_keys('\b')
       SKUs.send_keys('\b')
       SKUs.send_keys('\b')
-      SKUs.send_keys('22')
+      SKUs.send_keys('228')
 
 
 def Short_Desc(chromeBrower):
@@ -126,6 +122,10 @@ def Description(chromeBrowser):
 
 def saveButton (chromeBrowser):
       save = chromeBrowser.find_element(By.XPATH, "//button[@type='submit']").click()
+
+def search(chromBrowser):
+      Search = chromBrowser.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div[2]/div/div[1]/div[1]/div[1]/span/input")
+      Search.send_keys('tester')
   
  
 
