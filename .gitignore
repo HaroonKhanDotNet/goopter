@@ -4,3 +4,5 @@ login.py
 productsBAK.py
 .vscode
 test_login.py
+.ignore
+__init__py

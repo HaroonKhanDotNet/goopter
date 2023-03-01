@@ -25,7 +25,7 @@ def admin_login(chromeBrowser):
         userName_txt.send_keys('cynthiadev3')
 
         password_txt = chromeBrowser.find_element(By.NAME, 'password')
-        password_txt.send_keys('20230117')
+        password_txt.send_keys('ok20230117')
 
         login_btn = chromeBrowser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/form/div/div[3]/div/div/div/button')
         login_btn.click()
