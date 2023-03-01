@@ -146,6 +146,8 @@ def test_add_group_purchase_product(chromeBrowser):
     action.key_down(Keys.CONTROL).click(tag_options).key_up(Keys.CONTROL).perform() 
     sleep(6)
     
+    tag_options.send_keys(Keys.PAGE_DOWN)
+    
     # chromeBrowser.switch_to.window(chromeBrowser.window_handles[1])  #index out of range
     sleep(3)
     
@@ -338,8 +340,15 @@ def test_products_sharing(chromeBrowser):
     chromeBrowser.switch_to.window(handles[1])
     chromeBrowser.close()
     chromeBrowser.switch_to.window(handles[0])
-    sleep(10)
+    sleep(5)
 # via twitter
+    sharing = chromeBrowser.find_element(By.XPATH,'//*[@id="products-table-container"]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[10]/div/div/button[1]')
+        
+    action = ActionChains(chromeBrowser)
+        
+    action.move_to_element(sharing).perform()
+    sleep(3)
+    
     sharing.find_element(By.XPATH,'//p[contains(.,"Share via Twitter")]').click()
     sleep(3)
     handles = chromeBrowser.window_handles
@@ -350,6 +359,12 @@ def test_products_sharing(chromeBrowser):
     sleep(3)
     
 # via email  (manual testing for email app)
+    sharing = chromeBrowser.find_element(By.XPATH,'//*[@id="products-table-container"]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[10]/div/div/button[1]')
+        
+    action = ActionChains(chromeBrowser)
+        
+    action.move_to_element(sharing).perform()
+    sleep(2)
     sharing.find_element(By.XPATH,'//p[contains(.,"Share via Email")]').click()
     sleep(3)
     handles = chromeBrowser.window_handles

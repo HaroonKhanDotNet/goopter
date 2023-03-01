@@ -10,17 +10,18 @@ from selenium.webdriver.support.color import Color
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+import selenium.webdriver.support.wait
 
 def goopter_main():
 
     chromeBrowser = webdriver.Chrome()
     #chromeBrowser.maximize_window()
-    
+    #chromeBrowser.implicitly_wait(10)
    # MainWindow = chromeBrowser.current_window_handle()
 
     # login automation
     login.admin_login(chromeBrowser)
-    sleep(5)
+    #  sleep(5)
     
 # on control
     action = ActionChains(chromeBrowser)

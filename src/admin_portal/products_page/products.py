@@ -8,14 +8,18 @@ from datetime import date, timedelta, datetime
 from selenium.common.exceptions import NoSuchElementException
 from random_word import RandomWords
 import time
+import selenium.webdriver.support.wait
+
+
 
 def products_main(chromeBrowser):
-
+    #chromeBrowser.implicitly_wait(10)
     chromeBrowser.get('https://admin-dev.goopter.com/products/')
     
 
 def products_searchbox_type(chromeBrowser):
     sleep(2)
+    #chromeBrowser.implicitly_wait(10)
     searchbox = chromeBrowser.find_element(By.XPATH, '/html/body/div[1]/div/section/section/main/div[2]/div/div[1]/div[1]/div[1]/span/input')
     sleep(1)
     searchbox.send_keys('tea')
@@ -23,7 +27,7 @@ def products_searchbox_type(chromeBrowser):
     
 #Actions
 def add_group_purchase_product(chromeBrowser):
-    
+    #chromeBrowser.implicitly_wait(10)
     create_item = chromeBrowser.find_element(By.XPATH, "//button[normalize-space()='Create Item']")
     create_item.click()
     sleep(3)
@@ -146,10 +150,12 @@ def add_group_purchase_product(chromeBrowser):
     action.key_down(Keys.CONTROL).click(tag_options).key_up(Keys.CONTROL).perform() 
     sleep(6)
     
+    tag_options.send_keys(Keys.PAGE_DOWN)
+    
     # chromeBrowser.switch_to.window(chromeBrowser.window_handles[1])  #index out of range
     sleep(3)
     
-    tag_options.find_element(By.XPATH, "//button[normalize-space()='Add option value']").click()
+    tag_options.find_element(By.XPATH, "//button[contains(text(),'Add option value')]").click()
     sleep(1)
     # @id='rc_select_530' keep rolling, upto @id='rc_select_878'  ... 
     # option_title = tag_options.find_element(By.XPATH, "//input[@id='rc_select_530']").click()
@@ -220,7 +226,7 @@ def add_group_purchase_product(chromeBrowser):
     sleep(3)
     
 def products_threedots(chromeBrowser):
-    
+    #chromeBrowser.implicitly_wait(10)
     print('trying threedots..')
     sleep(1)
     
@@ -320,7 +326,7 @@ def products_threedots(chromeBrowser):
     
     
 def products_sharing(chromeBrowser):
-        
+    #chromeBrowser.implicitly_wait(10)
     print('try sharing..')
     sleep(1)
     sharing = chromeBrowser.find_element(By.XPATH,'//*[@id="products-table-container"]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[10]/div/div/button[1]')
@@ -346,6 +352,8 @@ def products_sharing(chromeBrowser):
     chromeBrowser.switch_to.window(handles[1])
     chromeBrowser.close()
     chromeBrowser.switch_to.window(handles[0])
+    
+    sleep(3)
     
 # via email  (manual testing for email app)
     sharing.find_element(By.XPATH,'//p[contains(.,"Share via Email")]').click()
@@ -421,7 +429,7 @@ def products_sharing(chromeBrowser):
     sleep(10)
 
 def product_enable(chromeBrowser):
-    
+    #chromeBrowser.implicitly_wait(10)
     enable = chromeBrowser.find_element(By.XPATH,"/html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div[9]/div[1]/div[1]").click()
     
     sleep(1)
