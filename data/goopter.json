@@ -1,0 +1,11 @@
+{
+    "goopter-login" : {
+
+        "goopter-url": "https://admin-dev.goopter.com/",
+        "username": ["By.NAME", "username", "haroondev"],
+        "password": ["By.NAME", "password", "20230130"],
+        "login_btn": ["By.XPATH", "//*[@id='root']/div/div/div[1]/form/div/div[3]/div/div/div/button"]
+    }
+    
+
+}
