@@ -66,39 +66,41 @@ def goopter_main():
 
     #liveorder.liverorder_start_delivery(chromeBrowser)
 
+    #liveorder.liveorder_complete_delivery(chromeBrowser)
+
+    #liveorder.liveorder_accept_pickup(chromeBrowser)
+    
+    liveorder.liveorder_ready_for_pickup(chromeBrowser)
+
+    # live order automation
+    #liveorder.liveorder_export(chromeBrowser)
+    #liveorder.liverorder_search(chromeBrowser)
+
+    # publish manager automation
+    #publishmanager.publishmanager_main(chromeBrowser)
+    #time.sleep(2)
+
+    #publishmanager.publishmanager_republish(chromeBrowser)
+    #time.sleep(2)
+    
+    #publishmanager.publishmanager_unpublish(chromeBrowser)
+    #time.sleep(2)
+
+    #publishmanager.publishmanager_sync(chromeBrowser)
+    #time.sleep(5)
+
+    # products automation
+    #products.products_main(chromeBrowser)
+    #input()
+
+    # products searchbox type
+    #products.products_searchbox_type(chromeBrowser)
+    #input()
+
+
     input()
     chromeBrowser.quit()
 
-''' 
-    # live order automation
-    liveorder.liveorder_export(chromeBrowser)
-    liveorder.liverorder_search(chromeBrowser)
-
-
-    # publish manager automation
-    publishmanager.publishmanager_main(chromeBrowser)
-    time.sleep(2)
-
-    publishmanager.publishmanager_republish(chromeBrowser)
-    time.sleep(2)
-    
-    publishmanager.publishmanager_unpublish(chromeBrowser)
-    time.sleep(2)
-
-    publishmanager.publishmanager_sync(chromeBrowser)
-    time.sleep(5)
-
-    # products automation
-    products.products_main(chromeBrowser)
-    input()
-
-    # products searchbox type
-    products.products_searchbox_type(chromeBrowser)
-    input()
-
-
-'''
-  
 
 if __name__ == '__main__':
     goopter_main()
