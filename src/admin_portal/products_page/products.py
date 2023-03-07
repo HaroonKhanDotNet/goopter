@@ -5,7 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.color import Color
 from datetime import date, timedelta, datetime
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, ElementClickInterceptedException
 from random_word import RandomWords
 import time
 import selenium.webdriver.support.wait
@@ -14,8 +14,12 @@ import selenium.webdriver.support.wait
 
 def products_main(chromeBrowser):
     #chromeBrowser.implicitly_wait(10)
-    chromeBrowser.get('https://admin-dev.goopter.com/products/')
-    
+    #chromeBrowser.get('https://admin-dev.goopter.com/products/')
+    action = ActionChains(chromeBrowser)
+    products_link = chromeBrowser.find_element(By.XPATH, "(//span[@class='ant-menu-title-content'])[6]")
+    sleep(1)
+    action.move_to_element(products_link).click().perform()
+    sleep(5)
 
 def products_searchbox_type(chromeBrowser):
     sleep(2)
@@ -70,7 +74,9 @@ def add_group_purchase_product(chromeBrowser):
     sleep(1)
     
     
-    action.move_by_offset(100, 100).click().perform()
+    # action.move_by_offset(100, 100).click().perform()
+    # //div[@class='form-item-label']//div[contains(text(),'Video')]
+    tag_item_info.find_element(By.XPATH, "//div[@class='form-item-label']//div[contains(text(),'Video')]").click()
 
     sleep(2)
 #turn on store show switch
@@ -118,7 +124,8 @@ def add_group_purchase_product(chromeBrowser):
   #  tag_item_info.find_element(By.XPATH, "//button[@ant-click-animating-without-extra-node='false']//span[contains(text(),'Ok')]").click()
     
     sleep(2)
-    action.move_by_offset(100, 0).click().perform()
+    # action.move_by_offset(100, 0).click().perform()
+    tag_item_info.find_element(By.XPATH, "//div[@class='form-item-label']//div[contains(text(),'Video')]").click()
 #description
     sleep(2)
     description= chromeBrowser.find_element(By.XPATH, "(//div[@contenteditable='true'])[1]")
@@ -150,6 +157,7 @@ def add_group_purchase_product(chromeBrowser):
     action.key_down(Keys.CONTROL).click(tag_options).key_up(Keys.CONTROL).perform() 
     sleep(6)
     
+    tag_options.send_keys(Keys.PAGE_DOWN)
     tag_options.send_keys(Keys.PAGE_DOWN)
     
     # chromeBrowser.switch_to.window(chromeBrowser.window_handles[1])  #index out of range
@@ -210,8 +218,8 @@ def add_group_purchase_product(chromeBrowser):
     op_name2.click()
     sleep(1)
     op_name2.send_keys('grant dish')
-    sleep(1)
-    price2=tag_options.find_element(By.XPATH, "(//input[@value='0'])[4]")
+    sleep(2)
+    price2=tag_options.find_element(By.XPATH, "(//input[@role='spinbutton'])[14]")
     price2.click()
     sleep(1)
     price2.send_keys(Keys.BACKSPACE,'19.99')
@@ -267,14 +275,53 @@ def products_threedots(chromeBrowser):
     threedots.find_element(By.XPATH,'//button[contains(., "Apply")]').click()
     sleep(10)
     
-
-#   Copy to New product  
+    # a short description
+    
     threedots = chromeBrowser.find_element(By.XPATH,'//*[@id="products-table-container"]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[10]/div/div/button[2]')
     
     action.move_to_element(threedots).perform()
     
-    sleep(3)
-    threedots.find_element(By.XPATH, '//p[contains(.,"Copy to New Product")]').click()
+    sleep(1)
+    threedots.find_element(By.XPATH, '//p[contains(.,"Short Description")]').click()
+    sleep(1)
+    # threedots.click()
+    sleep(2)
+    threedots.find_element(By.XPATH,'//textarea[contains(.,"thing")]').send_keys('testing to drink...')
+    sleep(2)
+    # <button type="button" class="ant-btn ant-btn-primary" ant-click-animating-without-extra-node="false">Apply</button>
+    # threedots.find_element(By.XPATH,'/html/body/div[44]/div/div[2]/div/div[2]/div[2]/div/div[2]/button').click()
+    # threedots.find_element(By.XPATH,'//button[.="Apply"]').click()
+    # action.move_to_element_with_offset(threedots.find_element(By.XPATH,'//button[.="Apply"]'), 1000,10).click().perform()
+    # M563
+    #//button[normalize-space()='Apply']
+    sel=1
+    if sel:
+        try: 
+            close = threedots.find_element(By.XPATH, '//*[contains(.,"close")]')
+            sleep(1)
+            action.move_to_element(close).perform()
+            
+            apply = threedots.find_element(By.XPATH, "//button[contains(text(),'Apply')]")
+            sleep(1)
+            apply.click()
+        except ElementNotInteractableException:  
+            threedots.find_element(By.XPATH, '//*[contains(.,"close")]').click()
+            sleep(1)
+            
+#   Copy to New product  
+    sleep(1)
+    threedots = chromeBrowser.find_element(By.XPATH,'//*[@id="products-table-container"]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/div[1]/div[10]/div/div/button[2]')
+
+    action.move_to_element(threedots).perform()
+    
+    sleep(3) 
+    
+    # threedots.find_element(By.XPATH, '//p[contains(.,"Copy to New Product")]').click()
+    copy = threedots.find_element(By.XPATH, '//p[contains(.,"Copy to New Product")]')
+    # action.move_to_element(copy).click().perform()
+    # action.key_down(Keys.CONTROL).click(copy).key_up(Keys.CONTROL).perform()
+    sleep(2)
+    copy.click()
     sleep(2)
     
     threedots.find_element(By.XPATH, '//span[.="Cancel"]').click()
@@ -302,7 +349,7 @@ def products_threedots(chromeBrowser):
     try:
         threedots.find_element(By.XPATH, '//p[contains(.,"Short Description")]').click()
         sleep(1)
-        threedots.click()
+        # threedots.click()
         sleep(2)
         threedots.find_element(By.XPATH,'//textarea[contains(.,"thing")]').send_keys('testing...')
         sleep(2)
@@ -311,10 +358,11 @@ def products_threedots(chromeBrowser):
     # threedots.find_element(By.XPATH,'//button[.="Apply"]').click()
     # action.move_to_element_with_offset(threedots.find_element(By.XPATH,'//button[.="Apply"]'), 1000,10).click().perform()
     # M563
+    #//button[normalize-space()='Apply']
         sel=0
         if sel:
         
-            threedots.find_element(By.XPATH, '(//button[normalize-space()="Apply"])[1]')
+            threedots.find_element(By.XPATH, '(//button[normalize-space()="Apply"])[1]').click()
         else: 
             threedots.find_element(By.XPATH, '//*[contains(.,"close")]').click()
     except NoSuchElementException:  #spelling error making this code not work as expected

@@ -65,7 +65,8 @@ def goopter_main():
 
 
 # online switch
-    online = chromeBrowser.find_element(By.XPATH,'//button[@role="switch"]').click()
+    online = chromeBrowser.find_element(By.XPATH,'//button[@role="switch"]')
+    online.click()
     sleep(1)
     
     handles=chromeBrowser.window_handles
@@ -74,7 +75,8 @@ def goopter_main():
         online.find_element(By.XPATH, "//span[normalize-space()='OK']").click()
         sleep(2)
         online = chromeBrowser.find_element(By.XPATH,'//button[@role="switch"]').click()
-    
+    else:
+        online.find_element(By.XPATH, "//span[normalize-space()='Cancel']").click()
     sleep(4)
 
 
