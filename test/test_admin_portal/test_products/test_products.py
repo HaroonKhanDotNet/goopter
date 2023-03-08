@@ -61,6 +61,7 @@ def test_add_group_purchase_product(browser: Chrome, products):
     tag_item_info.find_element(By.XPATH, "//div[contains(text(),'Test category')]").click()
 
     #action.move_by_offset(100, 0).click().perform()
+    tag_item_info.find_element(By.XPATH, "//div[@class='form-item-label']//div[contains(text(),'Video')]").click()
 
     # turn on store show switch
     store_switch = tag_item_info.find_element(By.XPATH, "//button[@id='show_store_link']")
@@ -89,7 +90,7 @@ def test_add_group_purchase_product(browser: Chrome, products):
 
     start_date.send_keys(Keys.CONTROL, 'a', Keys.BACK_SPACE, my_date.strftime('%Y-%m-%d'))
 
-    # tag_item_info.find_element(By.XPATH, "(//span[contains(text(),'Ok')])[2]").click()   # animating without extra node = false
+    #tag_item_info.find_element(By.XPATH, "(//span[contains(text(),'Ok')])[2]").click()   # animating without extra node = false
 
     end_date = tag_item_info.find_element(By.XPATH, "//input[@id='end_date']")
     end_date.click()
@@ -98,9 +99,10 @@ def test_add_group_purchase_product(browser: Chrome, products):
 
     end_date.send_keys(Keys.CONTROL, 'a', Keys.BACK_SPACE, end.strftime('%Y-%m-%d'))
 
-    tag_item_info.find_element(By.XPATH, "//button[@ant-click-animating-without-extra-node='false']//span[contains(text(),'Ok')]").click()
+    #tag_item_info.find_element(By.XPATH, "//button[@ant-click-animating-without-extra-node='false']//span[contains(text(),'Ok')]").click()
 
     # action.move_by_offset(100, 0).click().perform()
+    tag_item_info.find_element(By.XPATH, "//div[@class='form-item-label']//div[contains(text(),'Video')]").click()
 
     # description
     description = browser.find_element(By.XPATH, "(//div[@contenteditable='true'])[1]")
@@ -115,7 +117,7 @@ def test_add_group_purchase_product(browser: Chrome, products):
 
     # take care other tags such as seo, options and up-sales
     # to access by editting the item
-    my_edit = browser.find_element(By.XPATH, "(//div[@class='ag-react-container'])[3]")
+    my_edit = browser.find_element(By.XPATH, "(//div[@class='ag-react-container'])[1]")
 
     my_edit.click()
     # fill the option form

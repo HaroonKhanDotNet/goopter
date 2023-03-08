@@ -19,8 +19,6 @@ def browser():
     chromeBrowser = Chrome()
     chromeBrowser.maximize_window()
     chromeBrowser.implicitly_wait(10)
-    
-    #chromeBrowser.implicitly_wait(10)
 
     goopter_file = open('data/goopter.json', 'r')
     gc = json.load(goopter_file)
@@ -33,12 +31,14 @@ def browser():
 
     yield chromeBrowser
 
-    # todo: need to perform logout automation
+    #sign out
+    selection=chromeBrowser.find_element(By.XPATH,"//span[contains(text(),'Goopter')]")
+    selection.find_element(By.XPATH,"//span[normalize-space()='Sign Out']").click()
     chromeBrowser.quit()
 
 @pytest.fixture(scope='class')
 def admin_users(browser):
-        exp_wait = WebDriverWait(browser, timeout=10)
+        #exp_wait = WebDriverWait(browser, timeout=10)
 
         # //li[14])
         # //li[@role='menuitem'])[14]
@@ -49,9 +49,9 @@ def admin_users(browser):
 
 @pytest.fixture(scope='class')
 def products(browser):
-        exp_wait = WebDriverWait(browser, timeout=10)
+        #exp_wait = WebDriverWait(browser, timeout=10)
 
-        # //li[14])
+        # //li[6])
         # //li[@role='menuitem'])[6]
         # //*[@id="root"]/div/section/section/aside[2]/div/div/div[2]/ul/li[6]
         # exp_wait.until(lambda d: d.find_element(By.XPATH, '//li[6]')).click()
