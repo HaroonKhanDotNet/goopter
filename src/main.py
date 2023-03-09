@@ -2,7 +2,7 @@
 from selenium import webdriver
 import logging
 from admin_portal import login
-from admin_portal.products_page import products
+from test.test_admin_portal.test_products import products
 from admin_portal.Gift_card import gift_card
 from admin_portal.categories_page import categories
 from time import sleep
